@@ -1,0 +1,12 @@
+{
+    "env": {
+      "MYSQL_USER": "epiz_34139231",
+      "MYSQL_PASSWORD": "SBqdwfsHDyvmiY",
+      "MYSQL_DATABASE": "epiz_34139231_riquirri",
+      "MYSQL_HOST": "sql302.epizy.com",
+      "MYSQL_PORT": 3306,
+  
+      "JWT_KEY": "Requirri@183791"
+    }
+  }
+  
