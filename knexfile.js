@@ -2,9 +2,9 @@ module.exports = {
   development: {
     client: 'mysql2',
     connection: {
-      host: "aws.connect.psdb.cloud",
-      user: "wscpsxro5rnlyik9qpo9",
-      password: "pscale_pw_nS4iWMqRSbqn3flDSDkB9OfexcX6niHParO2PbsrKau",
+      host: "localhost",
+      user: "root",
+      password: "root",
       database: "riquirri",
       // host: "127.0.0.1",
       // user: "root",

@@ -1,12 +1,11 @@
 {
-    "env": {
-      "MYSQL_USER": "wscpsxro5rnlyik9qpo9",
-      "MYSQL_PASSWORD": "pscale_pw_nS4iWMqRSbqn3flDSDkB9OfexcX6niHParO2PbsrKau",
-      "MYSQL_DATABASE": "riquirri",
-      "MYSQL_HOST": "aws.connect.psdb.cloud",
-      "MYSQL_PORT": 3306,
-  
-      "JWT_KEY": "Requirri@183791"
-    }
+  "env": {
+    "MYSQL_USER": "wscpsxro5rnlyik9qpo9",
+    "MYSQL_PASSWORD": "pscale_pw_nS4iWMqRSbqn3flDSDkB9OfexcX6niHParO2PbsrKau",
+    "MYSQL_DATABASE": "riquirri",
+    "MYSQL_HOST": "aws.connect.psdb.cloud",
+    "MYSQL_PORT": 3306,
+
+    "JWT_KEY": "Requirri@183791"
   }
-  
+}
