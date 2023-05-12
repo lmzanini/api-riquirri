@@ -6,11 +6,13 @@ module.exports = {
       user: "root",
       password: "root",
       database: "riquirri",
-      // host: "127.0.0.1",
-      // user: "root",
-      // password: "root",
-      // database: "riquirri",
       port: 3306,
+      ssl: {
+        ca: '/path/to/ca.pem',
+        cert: '/path/to/cert.pem',
+        key: '/path/to/key.pem',
+      },
+      rejectUnauthorized: false,
       multipleStatements: true,
       flags: ['-–sql-mode=ONLY_FULL_GROUP_BY'],
     },
@@ -25,7 +27,13 @@ module.exports = {
       host: process.env.DATABASE_URL,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: 'riquirri'
+      database: 'riquirri',
+      ssl: {
+        ca: '/etc/secrets/ca.pem',
+        cert: '/etc/secrets/cert.pem',
+        key: '/etc/secrets/key.pem',
+      },
+      rejectUnauthorized: false,
     },
     pool: {
       min: 2,
