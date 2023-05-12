@@ -22,10 +22,10 @@ module.exports = {
   production: {
     client: 'mysql2',
     connection: {
-      host: 'localhost',
+      host: process.env.DATABASE_URL,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: 'seu-banco-de-dados'
+      database: 'riquirri'
     },
     pool: {
       min: 2,
