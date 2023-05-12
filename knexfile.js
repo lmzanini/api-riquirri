@@ -21,10 +21,16 @@ module.exports = {
   },
   production: {
     client: 'mysql2',
-    connection: process.env.DATABASE_URL,
+    connection: {
+      host: 'localhost',
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: 'seu-banco-de-dados'
+    },
     pool: {
       min: 2,
       max: 10
     }
   }
+  
 };
