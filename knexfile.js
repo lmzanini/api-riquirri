@@ -28,12 +28,12 @@ module.exports = {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: 'riquirri',
-      ssl: {
-        ca: '/etc/secrets/ca.pem',
-        cert: '/etc/secrets/cert.pem',
-        key: '/etc/secrets/key.pem',
-      },
-      rejectUnauthorized: false,
+      // ssl: {
+      //   ca: '/etc/secrets/ca.pem',
+      //   cert: '/etc/secrets/cert.pem',
+      //   key: '/etc/secrets/key.pem',
+      // },
+      rejectUnauthorized: true,
     },
     pool: {
       min: 2,
