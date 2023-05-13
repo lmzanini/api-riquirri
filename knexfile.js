@@ -1,18 +1,17 @@
+const fs = require('fs');
+
 module.exports = {
   development: {
     client: 'mysql2',
     connection: {
-      host: "localhost",
-      user: "root",
-      password: "root",
-      database: "riquirri",
+      host: "123",
+      user: "123",
+      password: "123",
+      database: "123",
       port: 3306,
       ssl: {
-        ca: '/path/to/ca.pem',
-        cert: '/path/to/cert.pem',
-        key: '/path/to/key.pem',
+        rejectUnauthorized: true,
       },
-      rejectUnauthorized: false,
       multipleStatements: true,
       flags: ['-–sql-mode=ONLY_FULL_GROUP_BY'],
     },
@@ -20,25 +19,18 @@ module.exports = {
       min: 2,
       max: 10
     },
-  },
+  }, 
   production: {
     client: 'mysql2',
     connection: {
-      host: process.env.DATABASE_URL,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: 'riquirri',
+      connectionString: process.env.DATABASE_URL,
       ssl: {
-        ca: '/etc/secrets/ca.pem',
-        cert: '/etc/secrets/cert.pem',
-        key: '/etc/secrets/key.pem',
+        rejectUnauthorized: true,
       },
-
     },
     pool: {
       min: 2,
       max: 10
     }
-  }
-  
+  } 
 };

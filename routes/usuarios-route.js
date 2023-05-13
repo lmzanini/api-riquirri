@@ -5,7 +5,7 @@ const verifyJWT = require('../middleware/authLoginUser')
 const router = express.Router();
 router.get('/me', verifyJWT, usuarioController.getCurrentUser); 
 // router.get("/user", verifyJWT, getUserInfo);
-router.get('/', usuarioController.getAllUsers)
+router.get('/listar', usuarioController.getAllUsers)
 router.get('/search', usuarioController.getUserByName);
 
 router.post('/login', usuarioController.login);

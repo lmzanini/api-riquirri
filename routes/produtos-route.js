@@ -44,8 +44,8 @@ router.get('/listarOferta', produtosController.listarProdutosAtivosOferta);
 router.get('/listarDestaque', produtosController.listarProdutosAtivosDestaque);
 router.get('/listar/nome', produtosController.getProductByName);
 router.get('/categoria/:id', produtosController.buscarProdutosPorCategoria);
-router.get('/listar/:id', produtosController.buscarProdutoPorId);
 router.put('/atualizar/:id', upload.array('imagem'), produtosController.atualizarProduto);
 router.delete('/deletar/:id', produtosController.deleteProduct);
+router.get('/listar/:id', produtosController.buscarProdutoPorId);
 
 module.exports = router;

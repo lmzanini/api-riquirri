@@ -323,7 +323,8 @@ async function login(req, res) {
         email: usuario.email,
         admin: usuario.admin
       },
-      process.env.JWT_KEY,
+      // process.env.JWT_KEY,
+      "Requirri@183791",
       { expiresIn: "1h" } // tempo de expiração do token
     );
 

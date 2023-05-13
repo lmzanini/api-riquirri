@@ -177,7 +177,7 @@ async function listarProdutos(req, res) {
       .offset((page - 1) * limit);
 
     if (!produtos || produtos.length === 0) {
-      return res.status(404).json({ message: "Produto não encontrado" });
+      return res.status(404).json({ message: "Produto não encontrado" }); 
     }
 
     const produtosFormatados = produtos.map(produto => {

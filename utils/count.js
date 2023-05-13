@@ -1,5 +1,5 @@
 async function countUsers(db) {
-  const [count] = await db('produtos').count();
+  const [count] = await db('usuarios').count();
 
   return count['count(*)'];
 };

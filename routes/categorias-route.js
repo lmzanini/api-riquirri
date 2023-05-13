@@ -45,7 +45,7 @@ router.post("/cadastrar", categoriaController.criarCategoria);
  */
 router.get("/listar", categoriaController.listarCategorias);
 
-
+ 
 /**
  * @swagger
  * /nome:
