@@ -28,19 +28,11 @@ module.exports = {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: 'riquirri',
-      dialectOptions: {
-        ssl: {
-          rejectUnauthorized: true,
-        },
+      ssl: {
+        ca: '/etc/secrets/ca.pem',
+        cert: '/etc/secrets/cert.pem',
+        key: '/etc/secrets/key.pem',
       },
-      define: {
-        timestamps: false,
-      },
-      // ssl: {
-      //   ca: '/etc/secrets/ca.pem',
-      //   cert: '/etc/secrets/cert.pem',
-      //   key: '/etc/secrets/key.pem',
-      // },
 
     },
     pool: {
@@ -50,20 +42,3 @@ module.exports = {
   }
   
 };
-const sequelize = new Sequelize(
-  "DATABASE_NAME",
-  "USERNAME",
-  "PASSWORD",
-  {
-    host: "HOST",
-    dialect: "mysql",
-    dialectOptions: {
-      ssl: {
-        rejectUnauthorized: true,
-      },
-    },
-    define: {
-      timestamps: false,
-    },
-  }
-);
