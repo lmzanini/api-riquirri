@@ -141,7 +141,7 @@ async function listarProdutos(req, res) {
         "produtos.destaque",
         "produtos.oferta",
         db.raw(
-          "GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/',imagem_produto.imagem)) as imagens"
+          "GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/',imagem_produto.imagem)) as imagens"
         ),
         db.raw(
           "GROUP_CONCAT(DISTINCT categorias.id_categorias) as categorias_id"
@@ -248,7 +248,7 @@ async function listarProdutosAtivos(req, res) {
         "produtos.destaque",
         "produtos.oferta",
         db.raw(
-          "GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/',imagem_produto.imagem)) as imagens"
+          "GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/',imagem_produto.imagem)) as imagens"
         ),
         db.raw(
           "GROUP_CONCAT(DISTINCT categorias.id_categorias) as categorias_id"
@@ -351,7 +351,7 @@ async function buscarProdutoPorId(req, res) {
         "produtos.destaque",
         "produtos.oferta",
         db.raw(
-          "GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/',imagem_produto.imagem)) as imagens"
+          "GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/',imagem_produto.imagem)) as imagens"
         ),
         db.raw(
           "GROUP_CONCAT(DISTINCT categorias.id_categorias) as categorias_id"
@@ -450,7 +450,7 @@ async function listarProdutosAtivosOferta(req, res) {
         "produtos.destaque",
         "produtos.oferta",
         db.raw(
-          "GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/',imagem_produto.imagem)) as imagens"
+          "GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/',imagem_produto.imagem)) as imagens"
         ),
         db.raw(
           "GROUP_CONCAT(DISTINCT categorias.id_categorias) as categorias_id"
@@ -559,7 +559,7 @@ async function listarProdutosAtivosDestaque(req, res) {
         "produtos.destaque",
         "produtos.oferta",
         db.raw(
-          "GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/',imagem_produto.imagem)) as imagens"
+          "GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/',imagem_produto.imagem)) as imagens"
         ),
         db.raw(
           "GROUP_CONCAT(DISTINCT categorias.id_categorias) as categorias_id"
@@ -663,7 +663,7 @@ const getProductByName = async (req, res) => {
         "produtos.destaque",
         "produtos.oferta",
         db.raw(
-          "GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/',imagem_produto.imagem)) as imagens"
+          "GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/',imagem_produto.imagem)) as imagens"
         ),
         db.raw(
           "GROUP_CONCAT(DISTINCT categorias.id_categorias) as categorias_id"
@@ -841,7 +841,7 @@ async function buscarProdutosPorCategoria(req, res) {
     "produtos.ativo",
     "produtos.destaque",
     "produtos.oferta",
-    db.raw("(SELECT GROUP_CONCAT(CONCAT('http://localhost:3000/uploads/', imagem)) FROM produtos_imagem_produto INNER JOIN imagem_produto ON imagem_produto.id_imagem_produto = produtos_imagem_produto.imagem_produto_id_imagem_produto WHERE produtos_imagem_produto.produtos_id_produtos = produtos.id_produtos) as imagens"),
+    db.raw("(SELECT GROUP_CONCAT(CONCAT('https://api-riquirri.onrender.com/uploads/', imagem)) FROM produtos_imagem_produto INNER JOIN imagem_produto ON imagem_produto.id_imagem_produto = produtos_imagem_produto.imagem_produto_id_imagem_produto WHERE produtos_imagem_produto.produtos_id_produtos = produtos.id_produtos) as imagens"),
     db.raw("(SELECT GROUP_CONCAT(DISTINCT categorias.id_categorias) FROM produtos_categoria INNER JOIN categorias ON categorias.id_categorias = produtos_categoria.categorias_id_categorias WHERE produtos_categoria.produtos_id_produtos = produtos.id_produtos) as categorias_id"),
     db.raw("(SELECT GROUP_CONCAT(DISTINCT categorias.nome) FROM produtos_categoria INNER JOIN categorias ON categorias.id_categorias = produtos_categoria.categorias_id_categorias WHERE produtos_categoria.produtos_id_produtos = produtos.id_produtos) as categorias_nome")
 
