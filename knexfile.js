@@ -23,10 +23,16 @@ module.exports = {
   production: {
     client: 'mysql2',
     connection: {
-      connectionString: process.env.DATABASE_URL,
+      host: process.env.DATABASE_URL,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
+      port: 3306,
       ssl: {
         rejectUnauthorized: true,
       },
+      multipleStatements: true,
+      flags: ['-–sql-mode=ONLY_FULL_GROUP_BY'],
     },
     pool: {
       min: 2,
